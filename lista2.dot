@@ -1,0 +1,1 @@
+digraph G {  ffff[shape=box,color=blue, style=filled]ffff -> fdfff;ffff[shape=box,color=blue, style=filled]fdfff[shape=box,color=blue, style=filled]fff[shape=box,color=green, style=filled]fff -> ddf;ddf[shape=box,color=green, style=filled]{rank=source;"ffff";"ffff";"fdfff";}{rank=source;"ffff";"ffff";"fdfff";}{rank=same;"fff";"fff";"ddf";}}

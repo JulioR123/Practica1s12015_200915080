@@ -19,7 +19,9 @@ public class Nod_Cat_planta {
 
     public Nod_Cat_planta() {
   this.sig=null;
-  rutaImagenP=nombre=Tipo_ataque="";
+  rutaImagenP="";
+          nombre="";
+          Tipo_ataque="";
   puntos=0;
     }
 

@@ -42,7 +42,7 @@ public class Lista_Cat_Planta {
     }
     
      public   Nod_Cat_planta Agregar_Inicio(String ruta, String nombre, int puntos, String Tip_Ataque){
-        cont++;
+       // cont++;
        Nod_Cat_planta nuevo = new  Nod_Cat_planta(ruta, nombre, puntos, Tip_Ataque);
         if(Vacio()){
             inicio = nuevo;
@@ -68,13 +68,26 @@ public class Lista_Cat_Planta {
     
 }
   
+  
+  
+  public void borrarPrimero(){
+      inicio = inicio.sig;
+  
+  }
+  
+  public Nod_Cat_planta  retornarPrimero(){
+  
+  return inicio;
+  
+  }
+  
    public int graficar(Lista_CatZombie aux) throws IOException {
          
 Nod_Cat_planta temp;
 temp = inicio;
 
      
-      
+       
         File archivo = new File("lista2.dot");
         BufferedWriter ver;
         ver = new BufferedWriter(new FileWriter(archivo));

@@ -25,28 +25,18 @@ public class FramePlantas extends javax.swing.JFrame {
      ListaCampo_Zombie z = new ListaCampo_Zombie();
      Lista_Cat_Planta plan = new Lista_Cat_Planta();
     Lista_CatZombie  zom = new Lista_CatZombie();   
+    ListaZomTipoPila miPila = new ListaZomTipoPila();
       NodoCampo_Zombie c;
+    int cant;
+      ListaPTipoCola pc= new ListaPTipoCola();
+      
+      
   
-     
+    
+       
       
       
-      /*
-      
-      
-      
-      
-        Lista_CatZombie p = new Lista_CatZombie();
-      
-       Lista_Cat_Planta cat = new Lista_Cat_Planta();
-       cat.Agregar_Inicio("dfdf", "juan", 23, "mucso");
-       cat.Agregar_Inicio("dfdf", "juan2", 24, "mucso");
-//      cat.Agregar_Inicio("dfdf", "pedro", 23, "mucso");
-//       cat.Agregar_Inicio("dfdf", "pedro1", 23, "mucso");
-//       cat.Agregar_Inicio("dfdf", "pedro2", 23, "mucso");
-//      
-       p.Agregar_Inicio("dfdf", "dato1", 25, "mucso");
-        p.Agregar_Inicio("dfdf", "dato2", 26, "mucso");
-       cat.graficar(p);
+    
       
       
       
@@ -66,7 +56,8 @@ public class FramePlantas extends javax.swing.JFrame {
       
       
       
-      */
+      
+      
       
     /**
      * Creates new form FramePlantas
@@ -191,6 +182,15 @@ ImageIcon agregarImagen;
         jButton14 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,7 +235,7 @@ ImageIcon agregarImagen;
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(nombreJugPlanta)
                         .addComponent(CantidadJugPlanta, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +255,7 @@ ImageIcon agregarImagen;
                     .addComponent(jLabel3)
                     .addComponent(AgregaMasCamposPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Elige Planta", jPanel2);
@@ -322,7 +322,7 @@ ImageIcon agregarImagen;
                             .addComponent(jLabel5))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                             .addComponent(jTextField5))
                         .addGap(102, 102, 102)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +366,7 @@ ImageIcon agregarImagen;
                         .addComponent(jLabel8)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton7)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalogo de Plantas", jPanel3);
@@ -390,6 +390,12 @@ ImageIcon agregarImagen;
         });
 
         jLabel10.setText("Agregar + Campos");
+
+        CantidadJugZombieTex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CantidadJugZombieTexActionPerformed(evt);
+            }
+        });
 
         AgregarCamposZombieTex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -418,7 +424,7 @@ ImageIcon agregarImagen;
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,7 +444,7 @@ ImageIcon agregarImagen;
                     .addComponent(jLabel10)
                     .addComponent(AgregarCamposZombieTex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Elige Zombie", jPanel4);
@@ -488,7 +494,7 @@ ImageIcon agregarImagen;
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
@@ -569,6 +575,24 @@ ImageIcon agregarImagen;
             }
         });
 
+        jLabel19.setText("Graficar  Zombis");
+
+        jButton17.setText("Graficar  Pila Zombies");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Graficas Plantas");
+
+        jButton18.setText("Graficar Cola Plantas");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -577,12 +601,16 @@ ImageIcon agregarImagen;
                 .addGap(80, 80, 80)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
-                    .addComponent(jLabel16))
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(348, Short.MAX_VALUE))
+                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                    .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,14 +619,71 @@ ImageIcon agregarImagen;
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jButton14))
-                .addGap(52, 52, 52)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jButton15))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jButton17))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jButton18))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Graficas", jPanel6);
+
+        jButton9.setText("Agregar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("Agregar");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Agregar Zombies a la Pila");
+
+        jLabel18.setText("Agregar Plantas a la Cola");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton16)
+                    .addComponent(jButton9))
+                .addGap(340, 340, 340))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jButton9))
+                .addGap(79, 79, 79)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton16)
+                    .addComponent(jLabel18))
+                .addContainerGap(217, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("ZomPILA-PlanCOLA", jPanel7);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -606,8 +691,8 @@ ImageIcon agregarImagen;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -632,132 +717,27 @@ ImageIcon agregarImagen;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
 
-       String nom;
-       int cant;
-       nom=this.nombreJugPlanta.getText();
-       cant= Integer.parseInt(this.CantidadJugPlanta.getText());
-       p.datosP(cant, nom);
-      
-      JOptionPane.showMessageDialog(null, "Agregado");
-       this.CantidadJugPlanta.setText("");
-        this.nombreJugPlanta.setText("");
-       
-       
- 
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        try {
+            plan.graficar(zom);
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     
-        String imagen= this.jTextField8.getText();
-        String nombre= jTextField5.getText();
-        int puntos = Integer.parseInt( jTextField6.getText());
-        String Tipo_ataque=jTextField7.getText();
-        
-        
-        plan.Agregar_Inicio(imagen, nombre, puntos, Tipo_ataque);
-       
-        this.recorrer();
-        this.jTextField8.setText("");
-         this.jTextField5.setText("");
-          this.jTextField6.setText("");
-           this.jTextField7.setText("");
-       
+            // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
 
+        try {
+            p.graficar(c, z);
 
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-JFileChooser seleccionar = new JFileChooser();
-int opcion = seleccionar.showOpenDialog(this);
-if(opcion==JFileChooser.APPROVE_OPTION){
-this.jTextField8.setText(seleccionar.getSelectedFile().getPath());
-//    Ruta= Selec.getSelectedFile().getPath();
-            //  System.out.println(Ruta);
-          }
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String nombre;
-nombre = this.AgregaMasCamposPlantas.getText();
-p.Agregar_InicioP(nombre);
-JOptionPane.showMessageDialog(null, " Dato Agregado");
-this.AgregaMasCamposPlantas.setText("");
-
-
-              
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     String nom;
-       int cant;
-       nom=this.NombreJugZombiTex.getText();
-       cant= Integer.parseInt(this.CantidadJugZombieTex.getText());
-       c= z.datosZ(cant, nom);
-   
-       
-    JOptionPane.showMessageDialog(null, "Agregado");
-    this.NombreJugZombiTex.setText("");
-        this.CantidadJugZombieTex.setText("");
-//       cp.datos(cant, nom);
-//      
-//      JOptionPane.showMessageDialog(null, "Agregado");
-//       this.NombreJugZombiTex.setText("");
-//        this.CantidadJugZombieTex.setText("");
-//       
-//       
-//
-//        
-        
-
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void AgregarCamposZombieTexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCamposZombieTexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarCamposZombieTexActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-String nombre;
-nombre = this.AgregarCamposZombieTex.getText();
-z.Agregar_InicioZ(nombre);
-JOptionPane.showMessageDialog(null, " Dato Agregado");
-this.AgregarCamposZombieTex.setText("");
-
-        
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-
-        JFileChooser seleccionar = new JFileChooser();
-int opcion = seleccionar.showOpenDialog(this);
-if(opcion==JFileChooser.APPROVE_OPTION){
-this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
-//    Ruta= Selec.getSelectedFile().getPath();
-            //  System.out.println(Ruta);
-          }
-        
-        
-        
-        
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+            // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
 
@@ -765,43 +745,202 @@ this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
         String nombre= this.DatoNombreCat.getText();
         int puntos=Integer.parseInt(this.PuntosDatcat.getText());
         String tipoAtaque = this.TipoataqueDatCat.getText();
-   
-        //  estoy agregando en la lista los datos del zombie
-      zom.Agregar_Inicio(ruta, nombre, puntos, tipoAtaque);
-       this.recorrer2();
-      this.RutaImagenZombie.setText("");
-      this.DatoNombreCat.setText("");
-      this.PuntosDatcat.setText("");
-      this.TipoataqueDatCat.setText("");
 
-// TODO add your handling code here:
+        //  estoy agregando en la lista los datos del zombie
+        zom.Agregar_Inicio(ruta, nombre, puntos, tipoAtaque);
+        this.recorrer2();
+        this.RutaImagenZombie.setText("");
+        this.DatoNombreCat.setText("");
+        this.PuntosDatcat.setText("");
+        this.TipoataqueDatCat.setText("");
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
 
+        JFileChooser seleccionar = new JFileChooser();
+        int opcion = seleccionar.showOpenDialog(this);
+        if(opcion==JFileChooser.APPROVE_OPTION){
+            this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
+            //    Ruta= Selec.getSelectedFile().getPath();
+            //  System.out.println(Ruta);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void AgregarCamposZombieTexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCamposZombieTexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarCamposZombieTexActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String nom;
+        int cant;
+        nom=this.NombreJugZombiTex.getText();
+        cant= Integer.parseInt(this.CantidadJugZombieTex.getText());
+        c= z.datosZ(cant, nom);
+
+        JOptionPane.showMessageDialog(null, "Agregado");
+        this.NombreJugZombiTex.setText("");
+        this.CantidadJugZombieTex.setText("");
+        //       cp.datos(cant, nom);
+        //
+        //      JOptionPane.showMessageDialog(null, "Agregado");
+        //       this.NombreJugZombiTex.setText("");
+        //        this.CantidadJugZombieTex.setText("");
+        //
+        //
+        //
+        //
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String nombre;
+        nombre = this.AgregarCamposZombieTex.getText();
+        z.Agregar_InicioZ(nombre);
+        JOptionPane.showMessageDialog(null, " Dato Agregado");
+        this.AgregarCamposZombieTex.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        JFileChooser seleccionar = new JFileChooser();
+        int opcion = seleccionar.showOpenDialog(this);
+        if(opcion==JFileChooser.APPROVE_OPTION){
+            this.jTextField8.setText(seleccionar.getSelectedFile().getPath());
+            //    Ruta= Selec.getSelectedFile().getPath();
+            //  System.out.println(Ruta);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        String imagen= this.jTextField8.getText();
+        String nombre= jTextField5.getText();
+        int puntos = Integer.parseInt( jTextField6.getText());
+        String Tipo_ataque=jTextField7.getText();
+
+        plan.Agregar_Inicio(imagen, nombre, puntos, Tipo_ataque);
+
+        this.recorrer();
+       
+        this.jTextField8.setText("");
+        this.jTextField5.setText("");
+        this.jTextField6.setText("");
+        this.jTextField7.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nombre;
+        nombre = this.AgregaMasCamposPlantas.getText();
+        p.Agregar_InicioP(nombre);
+        JOptionPane.showMessageDialog(null, " Dato Agregado");
+        this.AgregaMasCamposPlantas.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        String nom;
+        
+        nom=this.nombreJugPlanta.getText();
+        cant= Integer.parseInt(this.CantidadJugPlanta.getText());
+        p.datosP(cant, nom);
+
+        JOptionPane.showMessageDialog(null, "Agregado");
+        this.CantidadJugPlanta.setText("");
+        this.nombreJugPlanta.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+  
+    
+  
+    int n=1;
+   
+   while(!zom.Vacio()&& n<=c.cantidad){
+   
+   
+    miPila.insertaPila(zom.inicio);
+    zom.borrarPrimero();
+    
+    n++;
+  }
+   
+   JOptionPane.showMessageDialog(null, "Agregado a la PILA exito");
+   
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+
+      
+       
          try {
-             p.graficar(c, z);
-             
-             
-// TODO add your handling code here:
+             System.err.println("entro");
+             miPila.graficar();
          } catch (IOException ex) {
              Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
          }
-    }//GEN-LAST:event_jButton14ActionPerformed
+       
+    }//GEN-LAST:event_jButton17ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+ 
+        int n=1;
+//   
+         System.out.println(cant);
+   while(!plan.Vacio()&& n<=cant){
+     
+       
+//   Sys
+       System.out.println("a incertar en la cola");
+    pc.insertarCola(plan.inicio);
+    plan.borrarPrimero();
+    
+    n++;
+}
+//   
+   JOptionPane.showMessageDialog(null, "Agregados a la COLA con exito");    
+//        
+//        
+//        
+        
+        
+        
 
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+ 
         
          try {
-             plan.graficar(zom);
-             
-             
+             System.err.println("entro1");
+             pc.graficar();
              
 // TODO add your handling code here:
          } catch (IOException ex) {
              Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
          }
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void CantidadJugZombieTexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadJugZombieTexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CantidadJugZombieTexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -855,6 +994,9 @@ this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -862,6 +1004,7 @@ this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -870,7 +1013,11 @@ this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -884,6 +1031,7 @@ this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;

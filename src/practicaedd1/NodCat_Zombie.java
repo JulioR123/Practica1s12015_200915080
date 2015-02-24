@@ -16,6 +16,7 @@ public class NodCat_Zombie {
     String nombre;
     int puntos;
     String Tipo_ataque;
+    //int cod;
 
     public NodCat_Zombie() {
   this.sig=null;
@@ -29,6 +30,7 @@ public class NodCat_Zombie {
         this.nombre = nombre;
         this.puntos = puntos;
         this.Tipo_ataque = Tipo_ataque;
+       // this.cod=cod;
     }
     
     

@@ -10,19 +10,6 @@ package practicaedd1;
  *
  * @author julior
  */
-public class Jugador {
-    String nombre;
-    
-  
-   
-     public Jugador() {
-    nombre = "Jugador";
-         System.out.println("hola  ");
-   
-    }
-
-    
-   
-   
+public class NodoMatriz {
     
 }
