@@ -3,16 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package practicaedd1;
 
-
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -21,102 +28,98 @@ import javax.swing.table.DefaultTableModel;
  * @author julior
  */
 public class FramePlantas extends javax.swing.JFrame {
-     ListaCampo_Planta p = new ListaCampo_Planta();
-     ListaCampo_Zombie z = new ListaCampo_Zombie();
-     Lista_Cat_Planta plan = new Lista_Cat_Planta();
-    Lista_CatZombie  zom = new Lista_CatZombie();   
+
+    ListaCampo_Planta p = new ListaCampo_Planta();
+    ListaCampo_Zombie z = new ListaCampo_Zombie();
+    Lista_Cat_Planta plan = new Lista_Cat_Planta();
+    Lista_CatZombie zom = new Lista_CatZombie();
     ListaZomTipoPila miPila = new ListaZomTipoPila();
-      NodoCampo_Zombie c;
+    NodoCampo_Zombie c;
     int cant;
-      ListaPTipoCola pc= new ListaPTipoCola();
-      
-      
-  
-    
-       
-      
-      
-    
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    ListaPTipoCola pc = new ListaPTipoCola();
+    // variables del tablero...
+    int tamañoCasillaMatriz;
+     // DefaultListModel modeloListaPlantas;
+
     /**
      * Creates new form FramePlantas
      */
-      
-      
-DefaultTableModel modelo=new DefaultTableModel()
-        
-{
-    @Override
-    public Class getColumnClass(int indiceColumna){
-        Object j=getValueAt(0, indiceColumna);
-        if(j == null){
-            return Object.class;
-        }else{
-        return j.getClass();
+    DefaultTableModel modelo = new DefaultTableModel() {
+        @Override
+        public Class getColumnClass(int indiceColumna) {
+            Object j = getValueAt(0, indiceColumna);
+            if (j == null) {
+                return Object.class;
+            } else {
+                return j.getClass();
+            }
         }
-       }
-    }; 
+    };
 
-DefaultTableModel modelo2=new DefaultTableModel()
-        
-{
-    @Override
-    public Class getColumnClass(int indiceC){
-        Object jj=getValueAt(0, indiceC);
-        if(jj == null){
-            return Object.class;
-        }else{
-        return jj.getClass();
+    DefaultTableModel modelo2 = new DefaultTableModel() {
+        @Override
+        public Class getColumnClass(int indiceC) {
+            Object jj = getValueAt(0, indiceC);
+            if (jj == null) {
+                return Object.class;
+            } else {
+                return jj.getClass();
+            }
         }
-       }
-    }; 
- 
+    };
 
-ImageIcon ponerImagen;
-ImageIcon agregarImagen;
+    DefaultTableModel modelo3 = new DefaultTableModel() {
+        @Override
+        public Class getColumnClass(int indiceCc) {
+            Object jjj = getValueAt(0, indiceCc);
+            if (jjj == null) {
+                return Object.class;
+            } else {
+                return jjj.getClass();
+            }
+        }
+    };
+
+    DefaultTableModel modelo4 = new DefaultTableModel() {
+        @Override
+        public Class getColumnClass(int indiceCc1) {
+            Object j1 = getValueAt(0, indiceCc1);
+            if (j1 == null) {
+                return Object.class;
+            } else {
+                return j1.getClass();
+            }
+        }
+    };
+
+    ImageIcon ponerImagen;
+    ImageIcon agregarImagen;
+    ImageIcon agregarImagen2;
+    ImageIcon agregarImagen3;
+
     public FramePlantas() {
         initComponents();
-     
-   
-     
 
         modelo.addColumn("Imagen");
-         modelo.addColumn("Nombre");
-        modelo.addColumn("Puntos" );
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Puntos");
         modelo.addColumn("Tipo_Ataque");
         this.jTable1.setModel(modelo);
         //this.jTable1.setModel(modelo);
-        
-          modelo2.addColumn("Imagen");
-         modelo2.addColumn("Nombre");
-        modelo2.addColumn("Puntos" );
+
+        modelo2.addColumn("Imagen");
+        modelo2.addColumn("Nombre");
+        modelo2.addColumn("Puntos");
         modelo2.addColumn("Tipo_Ataque");
         this.jTable2.setModel(modelo2);
-         
+
+        modelo3.addColumn("Imagen");
+        this.jTable3.setModel(modelo3);
+
+        modelo4.addColumn("Imagen");
+        this.jTable4.setModel(modelo4);
+
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -191,6 +194,19 @@ ImageIcon agregarImagen;
         jButton16 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        panelContiene = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        PosX = new javax.swing.JTextField();
+        PosY = new javax.swing.JTextField();
+        jButton19 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,7 +251,7 @@ ImageIcon agregarImagen;
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(nombreJugPlanta)
                         .addComponent(CantidadJugPlanta, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +271,7 @@ ImageIcon agregarImagen;
                     .addComponent(jLabel3)
                     .addComponent(AgregaMasCamposPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(353, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Elige Planta", jPanel2);
@@ -298,6 +314,12 @@ ImageIcon agregarImagen;
             }
         });
 
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
         jButton8.setText("Agregar Ruta de imagen");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,7 +344,7 @@ ImageIcon agregarImagen;
                             .addComponent(jLabel5))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                             .addComponent(jTextField5))
                         .addGap(102, 102, 102)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +388,7 @@ ImageIcon agregarImagen;
                         .addComponent(jLabel8)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton7)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalogo de Plantas", jPanel3);
@@ -424,7 +446,7 @@ ImageIcon agregarImagen;
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +466,7 @@ ImageIcon agregarImagen;
                     .addComponent(jLabel10)
                     .addComponent(AgregarCamposZombieTex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Elige Zombie", jPanel4);
@@ -462,7 +484,7 @@ ImageIcon agregarImagen;
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jButton10.setText("Elegir Ruta");
+        jButton10.setText("Ruta Imagen");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -472,6 +494,12 @@ ImageIcon agregarImagen;
         jLabel11.setText("Imagen");
 
         jLabel12.setText("Nombre");
+
+        DatoNombreCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DatoNombreCatActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("Puntos");
 
@@ -494,65 +522,72 @@ ImageIcon agregarImagen;
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel11)
                             .addComponent(jLabel12))
-                        .addGap(32, 32, 32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(DatoNombreCat, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RutaImagenZombie, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                                .addGap(80, 80, 80)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PuntosDatcat, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TipoataqueDatCat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(DatoNombreCat, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RutaImagenZombie, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton10))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TipoataqueDatCat, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                    .addComponent(PuntosDatcat))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(39, 39, 39))
+                            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11)
-                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(RutaImagenZombie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PuntosDatcat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(DatoNombreCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14)
-                            .addComponent(TipoataqueDatCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16))
+                                .addComponent(jLabel11))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(PuntosDatcat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(DatoNombreCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(TipoataqueDatCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jButton13)))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton12)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton13)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(41, 41, 41)
+                        .addComponent(jButton11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton12)))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalogo_Zombies", jPanel5);
@@ -610,7 +645,7 @@ ImageIcon agregarImagen;
                     .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,7 +666,7 @@ ImageIcon agregarImagen;
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(jButton18))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Graficas", jPanel6);
@@ -663,7 +698,7 @@ ImageIcon agregarImagen;
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton16)
                     .addComponent(jButton9))
@@ -680,32 +715,145 @@ ImageIcon agregarImagen;
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton16)
                     .addComponent(jLabel18))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(375, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("ZomPILA-PlanCOLA", jPanel7);
+
+        panelContiene.setBackground(new java.awt.Color(29, 20, 12));
+
+        javax.swing.GroupLayout panelContieneLayout = new javax.swing.GroupLayout(panelContiene);
+        panelContiene.setLayout(panelContieneLayout);
+        panelContieneLayout.setHorizontalGroup(
+            panelContieneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 603, Short.MAX_VALUE)
+        );
+        panelContieneLayout.setVerticalGroup(
+            panelContieneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+
+        jLabel21.setText("jugador");
+
+        jLabel22.setText("jugador");
+
+        jLabel23.setText("PosX");
+
+        jLabel24.setText("PosY");
+
+        jButton19.setText("Cargar");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jTable3.setRowHeight(50);
+        jScrollPane4.setViewportView(jTable3);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jTable4.setRowHeight(50);
+        jScrollPane3.setViewportView(jTable4);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel21)
+                        .addGap(30, 30, 30)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(PosX, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PosY, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22)
+                        .addGap(43, 43, 43))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelContiene, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(PosY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton19)
+                            .addComponent(PosX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addContainerGap(35, Short.MAX_VALUE)
+                        .addComponent(jLabel21)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addComponent(panelContiene, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)))
+        );
+
+        jTabbedPane1.addTab("Tablero", jPanel8);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 35, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -741,9 +889,9 @@ ImageIcon agregarImagen;
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
 
-        String  ruta= this.RutaImagenZombie.getText();
-        String nombre= this.DatoNombreCat.getText();
-        int puntos=Integer.parseInt(this.PuntosDatcat.getText());
+        String ruta = this.RutaImagenZombie.getText();
+        String nombre = this.DatoNombreCat.getText();
+        int puntos = Integer.parseInt(this.PuntosDatcat.getText());
         String tipoAtaque = this.TipoataqueDatCat.getText();
 
         //  estoy agregando en la lista los datos del zombie
@@ -761,7 +909,7 @@ ImageIcon agregarImagen;
 
         JFileChooser seleccionar = new JFileChooser();
         int opcion = seleccionar.showOpenDialog(this);
-        if(opcion==JFileChooser.APPROVE_OPTION){
+        if (opcion == JFileChooser.APPROVE_OPTION) {
             this.RutaImagenZombie.setText(seleccionar.getSelectedFile().getPath());
             //    Ruta= Selec.getSelectedFile().getPath();
             //  System.out.println(Ruta);
@@ -777,9 +925,9 @@ ImageIcon agregarImagen;
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String nom;
         int cant;
-        nom=this.NombreJugZombiTex.getText();
-        cant= Integer.parseInt(this.CantidadJugZombieTex.getText());
-        c= z.datosZ(cant, nom);
+        nom = this.NombreJugZombiTex.getText();
+        cant = Integer.parseInt(this.CantidadJugZombieTex.getText());
+        c = z.datosZ(cant, nom);
 
         JOptionPane.showMessageDialog(null, "Agregado");
         this.NombreJugZombiTex.setText("");
@@ -810,7 +958,7 @@ ImageIcon agregarImagen;
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         JFileChooser seleccionar = new JFileChooser();
         int opcion = seleccionar.showOpenDialog(this);
-        if(opcion==JFileChooser.APPROVE_OPTION){
+        if (opcion == JFileChooser.APPROVE_OPTION) {
             this.jTextField8.setText(seleccionar.getSelectedFile().getPath());
             //    Ruta= Selec.getSelectedFile().getPath();
             //  System.out.println(Ruta);
@@ -825,15 +973,15 @@ ImageIcon agregarImagen;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        String imagen= this.jTextField8.getText();
-        String nombre= jTextField5.getText();
-        int puntos = Integer.parseInt( jTextField6.getText());
-        String Tipo_ataque=jTextField7.getText();
+        String imagen = this.jTextField8.getText();
+        String nombre = jTextField5.getText();
+        int puntos = Integer.parseInt(jTextField6.getText());
+        String Tipo_ataque = jTextField7.getText();
 
         plan.Agregar_Inicio(imagen, nombre, puntos, Tipo_ataque);
 
         this.recorrer();
-       
+
         this.jTextField8.setText("");
         this.jTextField5.setText("");
         this.jTextField6.setText("");
@@ -855,9 +1003,9 @@ ImageIcon agregarImagen;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String nom;
-        
-        nom=this.nombreJugPlanta.getText();
-        cant= Integer.parseInt(this.CantidadJugPlanta.getText());
+
+        nom = this.nombreJugPlanta.getText();
+        cant = Integer.parseInt(this.CantidadJugPlanta.getText());
         p.datosP(cant, nom);
 
         JOptionPane.showMessageDialog(null, "Agregado");
@@ -868,79 +1016,87 @@ ImageIcon agregarImagen;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-  
-    
-  
-    int n=1;
-   
-   while(!zom.Vacio()&& n<=c.cantidad){
-   
-   
-    miPila.insertaPila(zom.inicio);
-    zom.borrarPrimero();
-    
-    n++;
-  }
-   
-   JOptionPane.showMessageDialog(null, "Agregado a la PILA exito");
-   
+
+        int n = 1;
+
+        while (!zom.Vacio() && n <= c.cantidad) {
+
+            miPila.insertaPila(zom.inicio);
+            zom.borrarPrimero();
+
+            n++;
+        }
+
+        JOptionPane.showMessageDialog(null, "Agregado a la PILA exito");
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
 
-      
-       
-         try {
-             System.err.println("entro");
-             miPila.graficar();
-         } catch (IOException ex) {
-             Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
-         }
-       
+        try {
+            System.err.println("entro");
+            miPila.graficar();
+        } catch (IOException ex) {
+            Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
- 
-        int n=1;
+
+        int n = 1;
 //   
-         System.out.println(cant);
-   while(!plan.Vacio()&& n<=cant){
-     
-       
-//   Sys
-       System.out.println("a incertar en la cola");
-    pc.insertarCola(plan.inicio);
-    plan.borrarPrimero();
-    
-    n++;
-}
+        System.out.println(cant);
+        while (!plan.Vacio() && n <= cant) {
+
+            System.out.println("a incertar en la cola");
+            pc.insertarCola(plan.inicio);
+            plan.borrarPrimero();
+
+            n++;
+        }
 //   
-   JOptionPane.showMessageDialog(null, "Agregados a la COLA con exito");    
+        JOptionPane.showMessageDialog(null, "Agregados a la COLA con exito");
 //        
 //        
 //        
-        
-        
-        
+
 
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
- 
-        
-         try {
-             System.err.println("entro1");
-             pc.graficar();
-             
+
+        try {
+            System.err.println("entro1");
+            pc.graficar();
+
 // TODO add your handling code here:
-         } catch (IOException ex) {
-             Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
-         }
+        } catch (IOException ex) {
+            Logger.getLogger(FramePlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void CantidadJugZombieTexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadJugZombieTexActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CantidadJugZombieTexActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void DatoNombreCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DatoNombreCatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DatoNombreCatActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+
+        DrawTablero(panelContiene);
+        addlistaCola();
+        
+        addlistaPila();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -984,6 +1140,8 @@ ImageIcon agregarImagen;
     private javax.swing.JTextField CantidadJugZombieTex;
     private javax.swing.JTextField DatoNombreCat;
     private javax.swing.JTextField NombreJugZombiTex;
+    private javax.swing.JTextField PosX;
+    private javax.swing.JTextField PosY;
     private javax.swing.JTextField PuntosDatcat;
     private javax.swing.JTextField RutaImagenZombie;
     private javax.swing.JTextField TipoataqueDatCat;
@@ -997,6 +1155,7 @@ ImageIcon agregarImagen;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1018,6 +1177,10 @@ ImageIcon agregarImagen;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1032,69 +1195,193 @@ ImageIcon agregarImagen;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField nombreJugPlanta;
+    private javax.swing.JPanel panelContiene;
     // End of variables declaration//GEN-END:variables
 
-  private void recorrer(){
-    Nod_Cat_planta tem;
-    modelo.getDataVector().removeAllElements();  // esto parte limpia el tablero cada vez que ingresas un elemento
-    tem = plan.inicio;
-    while(tem!=null){
-    
-          String nombre =tem.rutaImagenP;
-          ImageIcon imagen=new ImageIcon((nombre));
-          ponerImagen=new ImageIcon(imagen.getImage().getScaledInstance(30, 30, 30));
-          Object datos[] = new Object[4];
-          datos[0]= ( ImageIcon)ponerImagen;
-          datos[1]= tem.nombre;
-          datos[2]=  tem.puntos;
-          datos[3]= tem.Tipo_ataque;
-          modelo.addRow(datos);
-        
-        
-        
-    tem = tem.sig;
+    private void recorrer() {
+        Nod_Cat_planta tem;
+        modelo.getDataVector().removeAllElements();  // esto parte limpia el tablero cada vez que ingresas un elemento
+        tem = plan.inicio;
+        while (tem != null) {
+
+            String nombre = tem.rutaImagenP;
+            ImageIcon imagen = new ImageIcon((nombre));
+            ponerImagen = new ImageIcon(imagen.getImage().getScaledInstance(30, 30, 30));
+            Object datos[] = new Object[4];
+            datos[0] = (ImageIcon) ponerImagen;
+            datos[1] = tem.nombre;
+            datos[2] = tem.puntos;
+            datos[3] = tem.Tipo_ataque;
+            modelo.addRow(datos);
+
+            tem = tem.sig;
+        }
+
     }
-  
-  
-  }
-  
-  public void recorrer2(){
-  NodCat_Zombie tem2;
-   modelo2.getDataVector().removeAllElements();// limpia el tablero....
-  tem2= zom.inicio;
-  while(tem2!=null){
-       String nom = tem2.rutaImagenZ;
-       ImageIcon ima = new ImageIcon(nom);
-       System.out.println("entro trae"+nom);
-       agregarImagen = new ImageIcon(ima.getImage().getScaledInstance(20, 20, 0));
-       Object datos[] = new Object[4];
-       datos[0]= (ImageIcon)agregarImagen;
-       datos[1]= tem2.nombre;
-       datos[2]= tem2.puntos;
-       datos[3]= tem2.Tipo_ataque;
-       modelo2.addRow(datos);
-       
-       
-      
+
+    public void recorrer2() {
+        NodCat_Zombie tem2;
+        modelo2.getDataVector().removeAllElements();// limpia el tablero....
+        tem2 = zom.inicio;
+        while (tem2 != null) {
+            String nom = tem2.rutaImagenZ;
+            ImageIcon ima = new ImageIcon(nom);
+            System.out.println("entro trae" + nom);
+            agregarImagen = new ImageIcon(ima.getImage().getScaledInstance(20, 20, 0));
+            Object datos[] = new Object[4];
+            datos[0] = (ImageIcon) agregarImagen;
+            datos[1] = tem2.nombre;
+            datos[2] = tem2.puntos;
+            datos[3] = tem2.Tipo_ataque;
+            modelo2.addRow(datos);
+
+            tem2 = tem2.sig;
+        }
+
+    }
+
+  /// toda la interfas del tablero.....
+    public void DrawTablero(JPanel LabelContieneMatriz) {
+
+        int tamx = Integer.parseInt(this.PosX.getText());
+        int tamy = Integer.parseInt(this.PosY.getText());
+        JLabel[][] Matriz = new JLabel[tamx][tamy];
+        // Etiquetas=new JLabel[Tamanio][Tamanio];
+        LabelContieneMatriz.removeAll();
+        Border Borde = LineBorder.createGrayLineBorder();
+        LabelContieneMatriz.setBorder(Borde);
+        LabelContieneMatriz.setBounds(10, 10, 500, 600);
+
+        if (tamx < tamy) {
+
+            int Tamanio_casilla = LabelContieneMatriz.getHeight() / tamy;
+
+            System.out.println(Tamanio_casilla);
+            Rectangle Tam = new Rectangle(Tamanio_casilla * tamx, Tamanio_casilla * tamy);
+            setTamañoCasillaMatriz(Tamanio_casilla);
+
+            LabelContieneMatriz.setBounds(Tam);
+            for (int filas = 0; filas < tamx; filas++) {
+                for (int columnas = 0; columnas < tamy; columnas++) {
+                    Matriz[filas][columnas] = new JLabel();
+                    Matriz[filas][columnas].setBounds((Tamanio_casilla * columnas), (Tamanio_casilla * filas), Tamanio_casilla, Tamanio_casilla);
+                    Matriz[filas][columnas].setBorder(Borde);
+                    Matriz[filas][columnas].setVisible(true);
+
+                    LabelContieneMatriz.add(Matriz[filas][columnas]);
+                }
+            }
+            LabelContieneMatriz.repaint();
+
+        } else {
+
+            int Tamanio_casilla = LabelContieneMatriz.getHeight() / tamx;
+
+            System.out.println(Tamanio_casilla);
+            Rectangle Tam = new Rectangle(Tamanio_casilla * tamx, Tamanio_casilla * tamy);
+            setTamañoCasillaMatriz(Tamanio_casilla);
+
+            LabelContieneMatriz.setBounds(Tam);
+            for (int filas = 0; filas < tamx; filas++) {
+                for (int columnas = 0; columnas < tamy; columnas++) {
+                    Matriz[filas][columnas] = new JLabel();
+                    Matriz[filas][columnas].setBounds((Tamanio_casilla * columnas), (Tamanio_casilla * filas), Tamanio_casilla, Tamanio_casilla);
+                    Matriz[filas][columnas].setBorder(Borde);
+                    Matriz[filas][columnas].setVisible(true);
+
+                    LabelContieneMatriz.add(Matriz[filas][columnas]);
+                }
+            }
+            LabelContieneMatriz.repaint();
+        }
+    }
+ // dibuja o inserta imagen en la posicion del tablero
+
+    public void DrawImagenenPosicionTablero(String Ruta, JLabel JlabeldelTablero) {
+        ImageIcon Imagen_fondo = new ImageIcon(Ruta);
+        Icon icono = new ImageIcon(Imagen_fondo.getImage().getScaledInstance(JlabeldelTablero.getWidth(), JlabeldelTablero.getHeight(), Image.SCALE_DEFAULT));
+        JlabeldelTablero.setIcon(icono);
+
+    }
+
+    /**
+     * @return the tamañoCasillaMatriz
+     */
+    public int getTamañoCasillaMatriz() {
+        return tamañoCasillaMatriz;
+    }
+
+    /**
+     * @param tamañoCasillaMatriz the tamañoCasillaMatriz to set
+     */
+    public void setTamañoCasillaMatriz(int tamañoCasillaMatriz) {
+        this.tamañoCasillaMatriz = tamañoCasillaMatriz;
+    }
+
+    public void drawMuro(String Ruta, JLabel Matrix[][], int x, int y) {
+
+        ImageIcon Imagen_fondo = new ImageIcon(Ruta);  // la linea siguiente es para redimencionar la
+        Icon icono = new ImageIcon(Imagen_fondo.getImage().getScaledInstance(Matrix[x][y].getWidth(), Matrix[x][y].getHeight(), Image.SCALE_DEFAULT));
+        Matrix[x][y].setIcon(icono);
+
+    }
+
+  // metods de la lista..
+    public void addlistaCola() {
+
+        NodPlantTipoCola tem;
+        tem = pc.cabeza;
+
+        while (tem != null) {
+
+            String nom = tem.ImaRutaPtC;
+            ImageIcon ima = new ImageIcon(nom);
+            System.out.println("entro trae" + nom);
+            agregarImagen2 = new ImageIcon(ima.getImage().getScaledInstance(60, 60, 20));
+            Object datos[] = new Object[1];
+            datos[0] = (ImageIcon) agregarImagen2;
+            modelo3.addRow(datos);
+
+            tem = tem.sig;
+        }
+
+    }
+
+    public void addlistaPila() {
+
+        NodZombieTipoPila tem;
+        tem = miPila.raiz;
         
-      
-      
-      
-  tem2 = tem2.sig;
-  }
-  
-  
-  
-  
-  }
+         while (tem != null) {
+
+            String nom = tem.RutIma;
+             System.out.println("entro y trae"+tem.RutIma);
+            ImageIcon ima = new ImageIcon(nom);
+            System.out.println("entro trae" + nom);
+            agregarImagen3 = new ImageIcon(ima.getImage().getScaledInstance(60, 60, 20));
+            Object datos[] = new Object[1];
+            datos[0] = (ImageIcon) agregarImagen3;
+            modelo4.addRow(datos);
+
+            tem = tem.sig;
+        }
+
+
+    }
+
 }

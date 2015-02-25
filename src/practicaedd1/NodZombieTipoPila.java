@@ -12,7 +12,7 @@ package practicaedd1;
  */
 public class NodZombieTipoPila {
    
-   
+     
     String nombreZtp;
     String RutIma;
     int puntos;

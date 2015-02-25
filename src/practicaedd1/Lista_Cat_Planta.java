@@ -68,12 +68,35 @@ public class Lista_Cat_Planta {
     
 }
   
+  public void Eliminar_Nodo(int indice){
+        Nod_Cat_planta actual = inicio;
+        if(indice == 0){
+            inicio = inicio.sig;
+        }
+        else{
+            Nod_Cat_planta siguiente = inicio.sig;
+            for(int i = 1;i<indice;i++){
+                actual = siguiente;
+                siguiente = siguiente.sig;
+            }
+
+            if(siguiente == ultimo){
+                ultimo = actual;
+            }
+            actual.sig = siguiente.sig;
+        }
+        tamaño--;
+    }
+ 
+  
   
   
   public void borrarPrimero(){
       inicio = inicio.sig;
   
   }
+  
+  
   
   public Nod_Cat_planta  retornarPrimero(){
   

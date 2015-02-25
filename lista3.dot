@@ -1,1 +1,1 @@
-digraph G {  PILA[shape=box,color=blue, style=filled]PILA -> xx;xx[shape=box,color=brown, style=filled]xx -> ss;ss[shape=box,color=brown, style=filled]ss ->   ff;  ff[shape=box,color=brown, style=filled]}
+digraph G {  PILA[shape=box,color=blue, style=filled]PILA -> dd;dd[shape=box,color=brown, style=filled]dd -> ff;ff[shape=box,color=brown, style=filled]}

@@ -18,57 +18,31 @@ public class PracticaEDD1 {
      */
     public static void main(String[] args) throws IOException {
        Jugador j = new Jugador();
-//     NodCampo_Planta cant =new NodCampo_Planta("lolo", 3);
-////  
-//     Lista_Cat_Planta miLista = new Lista_Cat_Planta();
-// ListaPTipoCola miCola = new ListaPTipoCola();
-//       
+       
    Parte1  p = new Parte1();
       p.setVisible(true);
-//       
-//      //  NodCampo_Planta pl  = new NodCampo_Planta();
-//    
-//   
-////   Lista_CatZombie miLista = new Lista_CatZombie();
-////   ListaZomTipoPila miPila = new ListaZomTipoPila();
-////    
-//   miLista.Agregar_Inicio("juan1", "pedro1", 101, "andre1");
-//  miLista.Agregar_Inicio("juan2", "pedro2", 102, "andre2");
-//   miLista.Agregar_Inicio("juan3", "pedro3", 103, "andre3");
-//   miLista.Agregar_Inicio("juan4", "pedro4", 104, "andre4");
-////    
-////    
-////  
-//  int n=1;
-//   
-//   while(!miLista.Vacio()&& n<=cant.cantidad){
-//   
-//   
-//    miCola.insertarCola(miLista.inicio);
-//    miLista.borrarPrimero();
-//    
-//    n++;
-//  }
-// //miCola.graficar();
-//   
-//  
-  }
-//    
-     }
-
-
-
-    
+      Lista_Cat_Planta planta = new Lista_Cat_Planta();
+      
+     Nod_Cat_planta n1= planta.Agregar_Inicio("ruta1", "2", 3, "4");
+      Nod_Cat_planta n2= planta.Agregar_Inicio("ruta2", "2", 3, "4");
+     Nod_Cat_planta n3=  planta.Agregar_Inicio("ruta3", "2", 3, "4");
+      
+      ListaPTipoCola tc = new ListaPTipoCola();
+      NodPlantTipoCola pc= new NodPlantTipoCola();
+      
+      tc.insertarCola(n1);
+       tc.insertarCola(n2);
+        tc.insertarCola(n3);
+        
+       // tc.recorrerCola();
+        
+        System.err.println("arriba llene mi pila ahora empiezo con la logica siguiete");
+        
+      
 //   while(! miPila.vacio()){
-//   
-//   
-//    
-//  
 //    miPila.recorrerPila();
 //    miPila.extraerPila();
-//   
-//  
-//   
-
-       
-    
+   
+    }
+         
+    }

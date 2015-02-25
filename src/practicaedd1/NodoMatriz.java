@@ -12,4 +12,14 @@ package practicaedd1;
  */
 public class NodoMatriz {
     
-}
+    NodoMatriz arriba;
+    NodoMatriz abajo;
+    NodoMatriz sig;
+    NodoMatriz ant;
+   
+
+    public NodoMatriz() {
+      arriba=abajo=sig=ant=null;
+    
+    }
+    }
