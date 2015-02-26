@@ -159,11 +159,6 @@ public class FramePlantas extends javax.swing.JFrame {
         jButton17 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jButton18 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         panelContiene = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -231,6 +226,15 @@ public class FramePlantas extends javax.swing.JFrame {
         NZ = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         AZ = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -457,55 +461,6 @@ public class FramePlantas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Graficas", jPanel6);
 
-        jButton9.setText("Agregar");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
-        jButton16.setText("Agregar");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-
-        jLabel17.setText("Agregar Zombies a la Pila");
-
-        jLabel18.setText("Agregar Plantas a la Cola");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton16)
-                    .addComponent(jButton9))
-                .addGap(340, 340, 340))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jButton9))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton16)
-                    .addComponent(jLabel18))
-                .addContainerGap(334, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("ZomPILA-PlanCOLA", jPanel7);
-
         panelContiene.setBackground(new java.awt.Color(29, 20, 12));
 
         javax.swing.GroupLayout panelContieneLayout = new javax.swing.GroupLayout(panelContiene);
@@ -695,7 +650,6 @@ public class FramePlantas extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -716,21 +670,18 @@ public class FramePlantas extends javax.swing.JFrame {
                                     .addComponent(jLabel8))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel25))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(IndiceEliminarCatPlanta)
+                            .addComponent(clavePlantas, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(nuevaRutaPlantas))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(IndiceEliminarCatPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(clavePlantas, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addComponent(nuevaRutaPlantas))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel29)
@@ -738,7 +689,10 @@ public class FramePlantas extends javax.swing.JFrame {
                                 .addGap(33, 33, 33)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(NuevoNombrePlantas, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                    .addComponent(nuevosPuntos))))
+                                    .addComponent(nuevosPuntos)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel31)
                         .addGap(45, 45, 45)))
@@ -749,6 +703,7 @@ public class FramePlantas extends javax.swing.JFrame {
                     .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NuevoTipoAtaque))
                 .addGap(116, 116, 116))
+            .addComponent(jScrollPane1)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -756,7 +711,7 @@ public class FramePlantas extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -776,27 +731,22 @@ public class FramePlantas extends javax.swing.JFrame {
                     .addComponent(IndiceEliminarCatPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6)
                     .addComponent(jButton5))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
-                            .addComponent(clavePlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29)
-                            .addComponent(NuevoNombrePlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31)
-                            .addComponent(NuevoTipoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel28)
-                            .addComponent(nuevaRutaPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30)
-                            .addComponent(nuevosPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(72, 72, 72))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton7)
-                        .addGap(32, 32, 32))))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(clavePlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29)
+                    .addComponent(NuevoNombrePlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31)
+                    .addComponent(NuevoTipoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(nuevaRutaPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30)
+                    .addComponent(nuevosPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7))
+                .addGap(71, 71, 71))
         );
 
         jTabbedPane1.addTab("Catalogo de Plantas", jPanel3);
@@ -891,8 +841,8 @@ public class FramePlantas extends javax.swing.JFrame {
                                         .addGap(50, 50, 50)
                                         .addComponent(jLabel13)
                                         .addGap(34, 34, 34)
-                                        .addComponent(PuntosDatcat, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(123, 123, 123)
+                                        .addComponent(PuntosDatcat, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(110, 110, 110)
                                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel26)
@@ -910,15 +860,15 @@ public class FramePlantas extends javax.swing.JFrame {
                                     .addComponent(CZ)
                                     .addComponent(RZ, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel35)
                                         .addGap(18, 18, 18)
-                                        .addComponent(PZ))
+                                        .addComponent(PZ, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel34)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(NZ, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NZ, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(38, 38, 38)
                                 .addComponent(jLabel36)
                                 .addGap(18, 18, 18)
@@ -966,7 +916,7 @@ public class FramePlantas extends javax.swing.JFrame {
                     .addComponent(jLabel26)
                     .addComponent(Indice_EliminarCatZombies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton12))
-                .addGap(24, 24, 24)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(CZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -981,10 +931,96 @@ public class FramePlantas extends javax.swing.JFrame {
                     .addComponent(jLabel35)
                     .addComponent(PZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catalogo_Zombies", jPanel5);
+
+        jButton9.setText("Agregar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("Agregar");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Agregar Zombies a la Pila");
+
+        jLabel37.setText("Delete  Dato Pila");
+
+        jLabel18.setText("Agregar Plantas a la Cola");
+
+        jLabel38.setText("Delete Dato Cola");
+
+        jButton20.setText("Eliminar de Pila");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        jButton21.setText("Eliminar de Cola");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel38))
+                        .addGap(181, 181, 181)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton20)
+                            .addComponent(jButton21))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton16)
+                            .addComponent(jButton9))
+                        .addGap(340, 340, 340))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jButton9))
+                .addGap(79, 79, 79)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton16)
+                    .addComponent(jLabel18))
+                .addGap(133, 133, 133)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton20)
+                    .addComponent(jLabel37))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jButton21))
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("ZomPILA-PlanCOLA", jPanel7);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1247,7 +1283,6 @@ public class FramePlantas extends javax.swing.JFrame {
 
         DrawTablero(panelContiene);
         addlistaCola();
-        
         addlistaPila();
 
         // TODO add your handling code here:
@@ -1313,6 +1348,23 @@ public class FramePlantas extends javax.swing.JFrame {
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+ /// eliminar zombi
+        miPila.extraerPila();
+        
+         JOptionPane.showMessageDialog(null, "dato eliminado exitosamente");
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+
+      pc.extraerCola();
+       JOptionPane.showMessageDialog(null, " dato eliminado exitosamente");
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton21ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1383,6 +1435,8 @@ public class FramePlantas extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1420,6 +1474,8 @@ public class FramePlantas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1586,11 +1642,13 @@ public class FramePlantas extends javax.swing.JFrame {
 
   // metods de la lista..
     public void addlistaCola() {
-
+    int n=1;
         NodPlantTipoCola tem;
         tem = pc.cabeza;
-
+    
         while (tem != null) {
+            
+          if(n<=4){
 
             String nom = tem.ImaRutaPtC;
             ImageIcon ima = new ImageIcon(nom);
@@ -1599,7 +1657,31 @@ public class FramePlantas extends javax.swing.JFrame {
             Object datos[] = new Object[1];
             datos[0] = (ImageIcon) agregarImagen2;
             modelo3.addRow(datos);
-
+          n++;
+              }else{
+          
+          
+           try {
+             
+                String nom = tem.ImaRutaPtC;
+            ImageIcon ima = new ImageIcon(nom);
+            System.out.println("entro trae" + nom);
+            agregarImagen2 = new ImageIcon(ima.getImage().getScaledInstance(60, 60, 20));
+            Object datos[] = new Object[1];
+            datos[0] = (ImageIcon) agregarImagen2;
+            modelo3.addRow(datos);
+               
+               
+            Thread.sleep(2000);
+            
+            
+        } catch (Exception e) {
+        }
+          
+          
+          
+          } 
+            
             tem = tem.sig;
         }
 
@@ -1610,8 +1692,13 @@ public class FramePlantas extends javax.swing.JFrame {
         NodZombieTipoPila tem;
         tem = miPila.raiz;
         
+   
+        int n=1;
          while (tem != null) {
-
+    
+             
+         if(n<=4){            
+             
             String nom = tem.RutIma;
              System.out.println("entro y trae"+tem.RutIma);
             ImageIcon ima = new ImageIcon(nom);
@@ -1620,11 +1707,43 @@ public class FramePlantas extends javax.swing.JFrame {
             Object datos[] = new Object[1];
             datos[0] = (ImageIcon) agregarImagen3;
             modelo4.addRow(datos);
-
-            tem = tem.sig;
+             System.out.println("valor de n"+n);
+        n++;
+         }else{
+         System.out.println("se salio del if ahora es "+n);
+         
+          try {
+             //System.out.println("julio2");
+             String nom = tem.RutIma;
+             System.out.println("entro y trae"+tem.RutIma);
+            ImageIcon ima = new ImageIcon(nom);
+            System.out.println("entro trae" + nom);
+            agregarImagen3 = new ImageIcon(ima.getImage().getScaledInstance(60, 60, 20));
+            Object datos[] = new Object[1];
+            datos[0] = (ImageIcon) agregarImagen3;
+            modelo4.addRow(datos);
+            // System.out.println("valor de n"+n);
+             
+             
+             Thread.sleep(5000);
+            
+            
+        } catch (Exception e) {
         }
-
-
+         
+         
+         
+         }
+           
+       
+            tem = tem.sig;
+       
+             }
+            
+            
     }
 
+
 }
+
+

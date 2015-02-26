@@ -14,12 +14,24 @@ public class NodoMatriz {
     
     NodoMatriz arriba;
     NodoMatriz abajo;
-    NodoMatriz sig;
-    NodoMatriz ant;
+    NodoMatriz izq;
+    NodoMatriz der;
+    int x;
+    int y;
    
 
     public NodoMatriz() {
-      arriba=abajo=sig=ant=null;
+      arriba=abajo=izq=der=null;
     
     }
+
+    public NodoMatriz( int x, int y) {
+        this.arriba = null;
+        this.abajo = null;
+        this.izq = null;
+        this.der = null;
+        this.x = x;
+        this.y = y;
+    }
+    
     }

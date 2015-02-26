@@ -15,7 +15,7 @@ public class Lista_CatZombie {
     NodCat_Zombie  ultimo;
     ListaZomTipoPila pilaZom= new ListaZomTipoPila();
     
-
+      int id=1;
     int tamaño;
    // int cont;
 
@@ -23,6 +23,7 @@ public class Lista_CatZombie {
         inicio = null;
         ultimo = null;
         tamaño = 0;
+        
     //    cont=0;
     }
     
@@ -41,18 +42,19 @@ public class Lista_CatZombie {
      public  NodCat_Zombie Agregar_Inicio(String ruta, String nombre, int puntos, String Tip_Ataque){
        
         // cont++;
-        NodCat_Zombie nuevo = new NodCat_Zombie(ruta, nombre, puntos, Tip_Ataque);
+        NodCat_Zombie nuevo = new NodCat_Zombie(id,ruta, nombre, puntos, Tip_Ataque);
         if(Vacio()){
             inicio = nuevo;
             ultimo = nuevo;
-            tamaño++;
+            //tamaño++;
               
             return inicio;
         }
         else{
             nuevo.sig = inicio;
             inicio = nuevo;
-            tamaño++;
+            //tamaño++; 
+            id++;
              
             return nuevo;
         }
@@ -103,9 +105,40 @@ public class Lista_CatZombie {
             }
             actual.sig = siguiente.sig;
         }
+        id--;
         tamaño--;
     }
  
- 
+ public NodCat_Zombie buscar(int id){
+  
+      NodCat_Zombie actual = inicio;
+      while(actual.sig!=null){
+      if(actual.clave==id){
+          break;
+      }else{
+          System.err.println("entro");
+          actual=actual.sig;
+      }
+      }
+      System.out.println(actual.nombre);
+  return actual;
+  }
+  
+   public NodCat_Zombie Modificar(int clave, String ruta, String nombre, int puntos , String ataque) {
+    
+       NodCat_Zombie actual = buscar(clave);
+       
+       if(actual!=null){
+           System.err.println("entro a modificar");
+       actual.rutaImagenZ=ruta;
+       actual.nombre=nombre;
+       actual.puntos=puntos;
+       actual.Tipo_ataque=ataque;
+      
+       }
+       
+return actual;
+     
+    }
     
 }

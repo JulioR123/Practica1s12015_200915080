@@ -16,20 +16,23 @@ public class NodCat_Zombie {
     String nombre;
     int puntos;
     String Tipo_ataque;
+    int clave;
     //int cod;
 
     public NodCat_Zombie() {
   this.sig=null;
   rutaImagenZ=nombre=Tipo_ataque="";
   puntos=0;
+ clave=0;
     }
 
-    public NodCat_Zombie( String rutaImagen, String nombre, int puntos, String Tipo_ataque) {
+    public NodCat_Zombie( int clave,String rutaImagen, String nombre, int puntos, String Tipo_ataque) {
         
         this.rutaImagenZ = rutaImagen;
         this.nombre = nombre;
         this.puntos = puntos;
         this.Tipo_ataque = Tipo_ataque;
+        this.clave=clave;
        // this.cod=cod;
     }
     

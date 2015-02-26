@@ -20,13 +20,13 @@ public class Lista_Cat_Planta {
      Nod_Cat_planta  ultimo;
 
     int tamaño;
-    int cont;
+    int clave=1;
 
     public Lista_Cat_Planta(){
         inicio = null;
         ultimo = null;
         tamaño = 0;
-        cont=0;
+       
     }
     
     /*
@@ -43,17 +43,20 @@ public class Lista_Cat_Planta {
     
      public   Nod_Cat_planta Agregar_Inicio(String ruta, String nombre, int puntos, String Tip_Ataque){
        // cont++;
-       Nod_Cat_planta nuevo = new  Nod_Cat_planta(ruta, nombre, puntos, Tip_Ataque);
+       Nod_Cat_planta nuevo = new  Nod_Cat_planta(clave,ruta, nombre, puntos, Tip_Ataque);
         if(Vacio()){
             inicio = nuevo;
             ultimo = nuevo;
+          //  clave++;
             return inicio;
         }
         else{
             nuevo.sig = inicio;
             inicio = nuevo;
+           clave++;
             return nuevo;
         }
+        
   
     }
   public void recorrer(){
@@ -64,7 +67,7 @@ public class Lista_Cat_Planta {
         temp= temp.sig;
     
     }
-        
+      System.out.println("tamaño es"+clave);  
     
 }
   
@@ -72,6 +75,7 @@ public class Lista_Cat_Planta {
         Nod_Cat_planta actual = inicio;
         if(indice == 0){
             inicio = inicio.sig;
+            
         }
         else{
             Nod_Cat_planta siguiente = inicio.sig;
@@ -85,11 +89,63 @@ public class Lista_Cat_Planta {
             }
             actual.sig = siguiente.sig;
         }
+        clave--;
         tamaño--;
     }
  
+  /*
   
+  public NodoMarcas Consulta_Nodo(String marca){
+        NodoMarcas actual = inicio;
+        while(actual.siguiente!=null)
+        {
+            if(actual.nombre.equals(marca)){
+                break;
+            }else{
+                actual=actual.siguiente;
+            }
+        }
+        return actual;
+    }
   
+  */
+  public Nod_Cat_planta buscar(int id){
+  
+      Nod_Cat_planta  actual = inicio;
+      while(actual.sig!=null){
+      if(actual.id==id){
+          break;
+      }else{
+          System.err.println("entro");
+          actual=actual.sig;
+      }
+      }
+      System.out.println(actual.nombre);
+  return actual;
+  }
+  
+   public Nod_Cat_planta Modificar(int clave, String ruta, String nombre, int puntos , String ataque) {
+    
+       Nod_Cat_planta actual = buscar(clave);
+       
+       if(actual!=null){
+           System.err.println("entro a modificar");
+       actual.rutaImagenP=ruta;
+       actual.nombre=nombre;
+       actual.puntos=puntos;
+       actual.Tipo_ataque=ataque;
+      
+       }
+       
+return actual;
+     
+    }
+   
+
+  
+   
+  
+   
   
   public void borrarPrimero(){
       inicio = inicio.sig;
@@ -115,6 +171,8 @@ temp = inicio;
         BufferedWriter ver;
         ver = new BufferedWriter(new FileWriter(archivo));
         ver.write("digraph G {  ");
+        
+        if(temp!=null){
         ver.write(temp.nombre + "[shape=box,color=blue, style=filled]");
         while(temp.sig!=null){
         ver.write(temp.nombre + " -> " + temp.sig.nombre + ";"); 
@@ -123,9 +181,9 @@ temp = inicio;
         temp = temp.sig;
         
         }
-        
+        }
         NodCat_Zombie tem2= aux.inicio;
-      
+      if(tem2!=null){
         
           ver.write(tem2.nombre + "[shape=box,color=green, style=filled]");
          while(tem2.sig!=null){
@@ -135,12 +193,12 @@ temp = inicio;
         
         }    
               
-              
+      }      
               //  System.err.println(tem2.nombre);
       
         
        
-        
+        if(temp!=null){
         
         temp= inicio;
         ver.write("{rank=source;");
@@ -150,7 +208,7 @@ temp = inicio;
            temp = temp.sig;
         }
         ver.write("}");
-        
+        }
         temp= inicio;
         ver.write("{rank=source;");
         ver.write("\"" + temp.nombre + "\";");
@@ -161,6 +219,7 @@ temp = inicio;
         ver.write("}");
         
 
+        if(tem2!=null){
          tem2= aux.inicio;
         ver.write("{rank=same;");
         ver.write("\"" + tem2.nombre + "\";");
@@ -169,7 +228,7 @@ temp = inicio;
            tem2 = tem2.sig;
         }
         ver.write("}");
-        
+        }
         
 //         tmpM = aux.listaM.inicio;
 //        ver.write("{rank=source;");

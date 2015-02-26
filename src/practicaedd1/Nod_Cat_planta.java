@@ -16,23 +16,26 @@ public class Nod_Cat_planta {
     String nombre;
     int puntos;
     String Tipo_ataque;
+    int id;
 
     public Nod_Cat_planta() {
   this.sig=null;
-  rutaImagenP="";
+          rutaImagenP="";
           nombre="";
           Tipo_ataque="";
-  puntos=0;
+          puntos=0;
+          id=0;
     }
 
-    public Nod_Cat_planta( String rutaImagen, String nombre, int puntos, String Tipo_ataque) {
+    public Nod_Cat_planta(int id, String rutaImagen, String nombre, int puntos, String Tipo_ataque) {
         
         this.rutaImagenP = rutaImagen;
         this.nombre = nombre;
         this.puntos = puntos;
         this.Tipo_ataque = Tipo_ataque;
+        this.id=id;
     }
-    
+     
     
   
       

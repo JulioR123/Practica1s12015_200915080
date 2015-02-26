@@ -1,1 +1,1 @@
-digraph G {  COLA -> ss;COLA[shape=box,color=blue, style=filled]ss[shape=box,color=brown, style=filled]ss -> dd;dd[shape=box,color=brown, style=filled]}
+digraph G {  }
